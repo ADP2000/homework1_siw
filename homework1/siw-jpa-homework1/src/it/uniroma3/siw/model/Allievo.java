@@ -28,9 +28,13 @@ public class Allievo {
 	
 	private String email;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Eager in quanto per ciascun allievo può essere utile avere informazioni anche sulla società 
+           per cui lavora */
 	@ManyToOne()
 	private Societa societa;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Lazy Load in quanto per ciascun allievo non si ha la necessita di caricare tutti i corsi che 
+	   esso segue */
 	@ManyToMany(mappedBy = "allievi")
 	private List<Corso> corsi;
 
