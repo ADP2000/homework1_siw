@@ -23,6 +23,8 @@ public class Docente {
 	
 	private String partitaIVA;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Lazy Load in quanto per ciascun docente non si ha la necessità di  caricare tutte le 
+	   informazioni riguardanti i corsi tenuti da quel docente*/
 	@OneToMany(mappedBy = "docente")
 	private	List<Corso> corsi;
 
