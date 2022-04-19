@@ -22,9 +22,13 @@ public class Corso {
 	
 	private LocalDate dataInizio;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Eager in quanto per ciascun corso può essere utile avere informazioni anche sul 
+	   docente che tiene quel corso */
 	@ManyToOne
 	private Docente docente;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Lazy Load in quanto per ciascun corso non si ha la necessità di caricare le informazioni
+	   riguardanti gli allievi iscritti a quel corso*/
 	@ManyToMany
 	private List<Allievo> allievi;
 
