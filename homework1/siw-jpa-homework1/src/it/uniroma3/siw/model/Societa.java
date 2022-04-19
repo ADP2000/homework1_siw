@@ -17,6 +17,8 @@ public class Societa {
 	
 	private int telefono;
 	
+	/* La politica di fetch adottata in questo caso è di tipo Eager in quanto per ciascuna società è utile avere informazioni anche sull'indirizzo 
+           in cui essa opera. */
 	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	private Indirizzo indirizzo;
 
